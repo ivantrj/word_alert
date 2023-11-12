@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:scalable_flutter_app_starter/core/extension/context.dart';
+import 'package:scalable_flutter_app_starter/feature/alert/ui/page/alert_page.dart';
+import 'package:scalable_flutter_app_starter/feature/favorites/ui/page/favorites_page.dart';
 import 'package:scalable_flutter_app_starter/feature/settings/ui/page/settings_page.dart';
+import 'package:scalable_flutter_app_starter/feature/word/ui/page/word_page.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -14,18 +17,23 @@ class _HomePageState extends State<HomePage> {
 
   final _tabs = <_HomeTab>[
     _HomeTab(
-      label: 'Home',
-      icon: Icons.home,
-      builder: (context) => const Center(child: Text('Home')),
+      label: 'Word',
+      icon: Icons.menu_book,
+      builder: (context) => const WordPage(),
     ),
     _HomeTab(
-      label: 'How To',
-      icon: Icons.question_mark_rounded,
-      builder: (context) => const Center(child: Text('Explore')),
+      label: 'Alert',
+      icon: Icons.alarm,
+      builder: (context) => const AlertPage(),
     ),
     _HomeTab(
-      label: 'Settings',
-      icon: Icons.settings,
+      label: 'Favorites',
+      icon: Icons.favorite,
+      builder: (context) => const FavoritesPage(),
+    ),
+    _HomeTab(
+      label: 'Info',
+      icon: Icons.info,
       builder: (context) => const SettingsPage(),
     ),
   ];
